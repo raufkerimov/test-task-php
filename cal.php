@@ -1,19 +1,36 @@
 <?php
-class Cal {
-    public $result = '';
-    public function add($var){
-        return $this->result = $this->result + $var;
+
+class Calculation
+{
+    public $result = 0;
+
+    public function add(float $digit)
+    {
+        return $this->result = $this->result + $digit;
     }
-    public function min($var){
-        return $this->result = $this->result - $var;
+
+    public function minus(float $digit)
+    {
+        return $this->result = $this->result - $digit;
     }
-    public function razdelit($digit){
+
+    public function division(float $digit)
+    {
+        return $this->result = $this->result / $digit;
+    }
+
+    public function multiplicate(float $digit)
+    {
         return $this->result = $this->result * $digit;
     }
-    public function mult($var){
-        return $this->result = $this->result * $var;
+
+    public function round()
+    {
+        return $this->result = round($this->result);
     }
-    private function round($var){
-        echo $this->result = round($var);
+
+    public function __toString()
+    {
+        return strval($this->result);
     }
 }
